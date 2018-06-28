@@ -1,0 +1,30 @@
+.header,
+.content,
+.sidebar,
+.footer {
+    border: 1px solid #ff0000;
+}
+
+.main {
+    display: flex;
+}
+
+.content {
+    flex: 70%;
+}
+
+.sidebar {
+    flex: 30%;
+}
+
+/* From Foundation 6 util classes */
+.show-for-sr {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
