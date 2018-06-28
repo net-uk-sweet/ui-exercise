@@ -38,6 +38,11 @@ a:active {
     padding: 1rem;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .main {
     display: flex;
 }
@@ -48,9 +53,27 @@ a:active {
 
 .sidebar {
     flex-basis: 30%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* 
+    Wanted to animate width of sidebar from 0 to 30%, with content section occupying
+    the remaining space, but spent too long trying and failing to get it to work :(
+*/
+.is-visible.sidebar {
+    opacity: 1;
 }
 
 /* Basic grid */
+
+/*
+    Saw this exercise as an opportunity to play around with CSS grid
+    and thought I would be able to make something this simple work in 
+    IE 11 (which depending on your point of view is still a major browser). 
+    With the benefit of hindsight, I think I would avoid grid altogether 
+    if IE 11 support is required and explore a flexbox solution.
+*/
 .grid {
     display: grid;
     grid-column-gap: 1.5rem;
