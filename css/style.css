@@ -1,8 +1,41 @@
+*,
+*::before,
+*::after { 
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    color: #9a9a9a;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #454545;
+    font-family: Georgia, serif;
+}
+
+a {
+    color: #454545;
+}
+
+a:visited,
+a:focus,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
 .header,
 .content,
 .sidebar,
 .footer {
-    border: 1px solid #ff0000;
+    padding: 1rem;
 }
 
 .main {
@@ -10,14 +43,66 @@
 }
 
 .content {
-    flex: 70%;
+    flex-basis: 70%;
 }
 
 .sidebar {
-    flex: 30%;
+    flex-basis: 30%;
 }
 
-/* From Foundation 6 util classes */
+/* Basic grid */
+.grid {
+    display: grid;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    grid-template-columns: 1fr;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main nav component */
+.main-navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation__item {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* Article component */
+.article {
+    /* no styles here for now, but leaving in since it's the 
+        block of this BEM component */
+}
+
+.article__link {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+}
+
+.article__image {
+    margin-bottom: 1rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.article__heading {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    margin: 0 0 1rem;
+}
+
+.article__text {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Accesible hide - from Foundation 6 util classes */
 .show-for-sr {
     position: absolute !important;
     width: 1px !important;
@@ -28,3 +113,20 @@
     white-space: nowrap !important;
     border: 0 !important;
 }
+
+/* min-width 641px, medium screens */
+@media only screen and (min-width: 40.063em) { 
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+} 
+
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 64.063em) { 
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+
